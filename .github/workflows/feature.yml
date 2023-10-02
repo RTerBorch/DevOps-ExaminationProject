@@ -27,7 +27,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-jar
-          path: build/libs/demo-0.0.1-SNAPSHOT.jar
+          path: build/libs/DevOps-ExaminationProject-0.0.1-SNAPSHOT.j
+
 
   publish:
     needs: testing-and-building
