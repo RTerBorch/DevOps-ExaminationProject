@@ -5,12 +5,6 @@ plugins {
 	id 'jacoco'
 }
 
-jacoco {
-	toolVersion = "0.8.9"
-	reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
-}
-
-
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
@@ -48,7 +42,15 @@ configurations {
 	systemTestRuntimeOnly.extendsFrom testRuntimeOnly
 }
 
-
+test {
+	useJUnitPlatform{
+		failFast = true
+	}
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+	finalizedBy jacocoTestReport
+}
 
 
 
@@ -59,6 +61,8 @@ jacocoTestReport {
 		html.required = true
 	}
 }
+
+
 
 
 
