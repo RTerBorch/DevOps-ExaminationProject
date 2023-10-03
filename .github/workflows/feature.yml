@@ -71,4 +71,4 @@ jobs:
       - name: Convert repository name to lowercase
         run: echo "REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
       - name: Deploy Fake
-        run: echo "Deploying ghcr.io/${{ env.REPO_NAME }}:development-latest"
+        run: docker run "ghcr.io/${{ env.REPO_NAME }}:development-latest"
