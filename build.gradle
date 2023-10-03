@@ -52,15 +52,6 @@ test {
 	finalizedBy jacocoTestReport
 }
 
-
-jacocoTestReport {
-	reports {
-		xml.required = true
-		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
-		html.required = true
-	}
-}
-
 task integrationTest(type: Test) {
 	testClassesDirs = sourceSets.integrationTest.output.classesDirs
 	classpath = sourceSets.integrationTest.runtimeClasspath
@@ -84,3 +75,14 @@ task systemTest(type: Test) {
 	}
 	finalizedBy jacocoTestReport
 }
+
+
+jacocoTestReport {
+	reports {
+		xml.required = true
+		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+		html.required = true
+	}
+}
+
+
