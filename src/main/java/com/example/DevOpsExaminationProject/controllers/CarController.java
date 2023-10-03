@@ -11,4 +11,9 @@ public class CarController {
     public Car getCar(){
         return new Car();
     }
+
+    @GetMapping("/greet")
+    public String greet(){
+        return "Hello, World!";
+    }
 }

@@ -5,6 +5,12 @@ plugins {
 	id 'jacoco'
 }
 
+jacoco {
+	toolVersion = "0.8.9"
+	reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
@@ -20,17 +26,39 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.rest-assured:rest-assured:5.3.2'
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-test {
-	useJUnitPlatform{
-		failFast = true
+sourceSets {
+	integrationTest {
+		java.srcDir file('src/integrationTest/java')
+		resources.srcDir file('src/integrationTest/resources')
+		compileClasspath += sourceSets.main.output + sourceSets.test.output
+		runtimeClasspath += sourceSets.main.output + sourceSets.test.output
 	}
-	testLogging {
-		events "passed", "skipped", "failed"
+	systemTest {
+		java.srcDir file('src/systemTest/java')
+		resources.srcDir file('src/systemTest/resources')
 	}
-	finalizedBy jacocoTestReport
 }
 
-jacocoTestReport { dependsOn test reports { xml.required = true } }
+configurations {
+	integrationTestImplementation.extendsFrom testImplementation
+	integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
+	systemTestImplementation.extendsFrom testImplementation
+	systemTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
+
+
+
+
+jacocoTestReport {
+	reports {
+		xml.required = true
+		html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+		html.required = true
+	}
+}
+
+
+
