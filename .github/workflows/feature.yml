@@ -10,10 +10,6 @@ permissions:
   contents: read
   packages: read
 
-permissions:
-  contents: read
-  packages: read
-
 jobs:
   testing:
     runs-on: ubuntu-latest
