@@ -24,10 +24,13 @@ dependencies {
 
 sourceSets {
 	integrationTest {
-		java.srcDir file('src/integrationTest/java')
+		java {
+			java.srcDir file('src/integrationTest/java')
+			resources.srcDir file('src/integrationTest/resources')
+			compileClasspath += sourceSets.main.output + sourceSets.test.output
+			runtimeClasspath += sourceSets.main.output + sourceSets.test.output
+		}
 		resources.srcDir file('src/integrationTest/resources')
-		compileClasspath += sourceSets.main.output + sourceSets.test.output
-		runtimeClasspath += sourceSets.main.output + sourceSets.test.output
 	}
 	systemTest {
 		java.srcDir file('src/systemTest/java')
