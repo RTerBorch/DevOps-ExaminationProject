@@ -22,10 +22,10 @@ jobs:
           distribution: 'temurin'
       - name: Grant execute permissions for gradlew
         run: chmod +x gradlew
-        ##- name: Run unit tests
-        ##run: ./gradlew test
-        ##- name: Run integration test
-        ##run: ./gradlew integrationTest
+      - name: Run unit tests
+        run: ./gradlew test
+      - name: Run integration test
+        run: ./gradlew integrationTest
 
   building:
     needs: testing
@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-jar
-          path: build/libs/final-0.0.1-SNAPSHOT.jar
+          path: build/libs/DevOps-ExaminationProject-0.0.1-SNAPSHOT.jar
 
   publish:
     needs: building
