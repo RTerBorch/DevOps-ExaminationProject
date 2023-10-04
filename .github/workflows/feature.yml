@@ -96,7 +96,7 @@ jobs:
         run: ./gradlew systemTest
     services:
       app:
-        image: ghcr.io/${{ env.REPO_NAME }}:development-latest
+        image: ghcr.io/rterborch/devops-examinationproject:development-latest
         credentials:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
