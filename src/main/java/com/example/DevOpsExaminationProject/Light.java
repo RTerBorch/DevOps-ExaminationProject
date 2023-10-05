@@ -1,4 +1,5 @@
 package com.example.DevOpsExaminationProject;
+
 public class Light {
     private boolean frontLightStatus;
     private String frontLightMode;
@@ -57,7 +58,8 @@ public class Light {
         backLightsOn();
         frontLightsOn();
     }
-    public void allLightsOff(){
+
+    public void allLightsOff() {
         backLightsOff();
         frontLightsOff();
     }
