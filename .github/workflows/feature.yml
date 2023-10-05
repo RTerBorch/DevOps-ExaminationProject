@@ -2,9 +2,9 @@ name: Java Gradle Testing and Publishing on Dev Branch
 
 on:
   push:
-    branches: [ "feature" ]
+    branches: [ "feature**","main"]
   pull_request:
-    branches: [ "feature" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
