@@ -29,7 +29,7 @@ class CarControllerTest {
     void greet_shouldReturnHelloWorld() throws Exception {
         mockMvc.perform(get("/greet"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello, World!q"));
+                .andExpect(content().string("Hello, World!"));
     }
 
     @BeforeEach
