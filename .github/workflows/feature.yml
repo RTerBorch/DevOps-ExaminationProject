@@ -44,6 +44,7 @@ jobs:
         run: ./gradlew integrationTest
 
   building:
+    if: always() && !failure()
     needs:   [testing-JUnit, testing-IntegrationTest]
     runs-on: ubuntu-latest
     steps:
