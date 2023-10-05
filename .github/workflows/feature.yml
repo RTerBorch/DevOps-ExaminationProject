@@ -44,7 +44,7 @@ jobs:
         run: ./gradlew integrationTest
 
   building:
-    needs:   [testing-JUnit, testing-IntegrationTest]
+    needs: [ testing-JUnit, testing-IntegrationTest ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
