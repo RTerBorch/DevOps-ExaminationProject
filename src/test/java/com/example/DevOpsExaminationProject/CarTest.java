@@ -45,7 +45,7 @@ public class CarTest {
     @Test
     void CarTest_LightModeFull() {
         car.getLight().switchLightMode();
-        assertEquals(car.getLight().getFrontLightMode(), "FULL");
+        assertEquals(car.getLight().getFrontLightMode(), "FULL-FAIL");
     }
 
     @Test
