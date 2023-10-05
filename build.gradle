@@ -10,7 +10,7 @@ checkstyle {
     toolVersion = '10.12.4'
     reportsDir = file("${project.buildDir}/checkstyle")
     showViolations = true
-    maxWarnings = 200
+    maxWarnings = 150
     maxErrors = 10
 }
 tasks.withType(Checkstyle) {
@@ -97,7 +97,6 @@ task systemTest(type: Test) {
     finalizedBy jacocoTestReport
     finalizedBy checkstyleSystemTest
 }
-
 
 jacocoTestReport {
     reports {
