@@ -43,6 +43,7 @@ jobs:
 
   building:
     needs:   [testing-JUnit, testing-IntegrationTest]
+    if: needs.testing-JUnit.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
