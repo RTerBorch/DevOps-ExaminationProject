@@ -106,7 +106,7 @@ jobs:
           - 8080:8080
         ##options: --health-cmd="curl -f http://localhost:8080" --health-interval=10s --health-timeout=5s --health-retries=3
 
-  deploy test:
+  deploy-test:
     if: github.event_name != 'pull_request' && github.head_ref != 'main'
     needs: system-testing
     runs-on: ubuntu-latest
@@ -118,7 +118,7 @@ jobs:
       - name: Deploy to test environment
         run: echo "Deploying ghcr.io/${{ env.REPO_NAME }}:development-latest"
 
-  deploy to production:
+  deploy-to-production:
     if: github.event_name == 'pull_request' && github.head_ref == 'main'
     needs: system-testing
     runs-on: ubuntu-latest
