@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -18,6 +19,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class CarControllerTest {
+    @Autowired
+    private CarService carService;
 
     @LocalServerPort
     private int port;
@@ -31,9 +34,14 @@ class CarControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hello, World!"));
     }
+    @Test
+    public void testGreet() {
+        String result = carService.greet();
+        assertEquals("Hello, World!", result);
+    }
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         RestAssured.baseURI = "http://localhost";
         RestAssured.port = port;
     }

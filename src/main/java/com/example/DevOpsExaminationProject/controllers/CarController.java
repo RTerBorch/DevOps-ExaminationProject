@@ -14,12 +14,12 @@ public class CarController {
     CarService carService;
 
     @GetMapping("/car")
-    public Car getCar(){
+    public Car getCar() {
         return new Car();
     }
 
     @GetMapping("/greet")
-    public String greet(){
+    public String greet() {
         return carService.greet();
     }
 }

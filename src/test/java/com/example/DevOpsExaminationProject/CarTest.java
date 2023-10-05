@@ -56,50 +56,51 @@ public class CarTest {
     }
 
     @Test
-    void CarTest_BacklightOn(){
+    void CarTest_BacklightOn() {
         car.getLight().backLightsOn();
         assertEquals(car.getLight().getBackLightStatus(), true);
     }
 
     @Test
-    void CarTest_BacklightOff(){
+    void CarTest_BacklightOff() {
         car.getLight().backLightsOff();
         assertEquals(car.getLight().getBackLightStatus(), false);
     }
 
     @Test
-    void CarTest_EngineOn(){
+    void CarTest_EngineOn() {
         car.startEngine();
         assertTrue(car.getEngine().getEngineStatus());
     }
 
     @Test
-    void CarTest_EngineOff(){
+    void CarTest_EngineOff() {
         car.stopEngine();
         assertFalse(car.getEngine().getEngineStatus());
     }
 
     @Test
-    void CarTest_AllLightsOn(){
+    void CarTest_AllLightsOn() {
         car.getLight().allLightsOn();
         assertTrue(car.getLight().getFrontLightStatus());
         assertTrue(car.getLight().getBackLightStatus());
     }
 
     @Test
-    void CarTest_EngineOffAllLightsOff(){
+    void CarTest_EngineOffAllLightsOff() {
         car.getLight().allLightsOn();
         car.stopEngine();
         assertFalse(car.getLight().getFrontLightStatus());
         assertFalse(car.getLight().getBackLightStatus());
     }
+
     @Test
-    void CarTest_setFrontLightMode(){
+    void CarTest_setFrontLightMode() {
         assertNotNull(car.getLight().getFrontLightMode());
     }
 
     @Test
-    void CarTest_AllLightsOff(){
+    void CarTest_AllLightsOff() {
         car.getLight().allLightsOff();
         assertFalse(car.getLight().getFrontLightStatus());
         assertFalse(car.getLight().getBackLightStatus());

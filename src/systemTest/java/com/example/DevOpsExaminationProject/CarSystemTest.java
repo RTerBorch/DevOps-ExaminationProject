@@ -4,6 +4,8 @@ import io.restassured.RestAssured;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.port;
@@ -13,7 +15,7 @@ import static org.hamcrest.Matchers.equalTo;
 class CarSystemTest {
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         RestAssured.baseURI = "http://localhost";
         port = port;
     }
@@ -24,4 +26,5 @@ class CarSystemTest {
                 .when().get("/greet")
                 .then().body(equalTo("Hello, World!"));
     }
+
 }
