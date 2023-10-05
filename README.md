@@ -9,3 +9,4 @@ För att underlätta för utvecklare som ska releasa programmet, inkluderas en i
 git log
 git log -S
 git show <git-sha>
+
