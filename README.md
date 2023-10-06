@@ -1,4 +1,10 @@
 # DevOps-ExaminationProject
+
+I detta utbildnings projekt skapar jag en CI/CD pipeline där tester körs enligt "fail-fast". Detta projekt använder sig av FeatureBranching och inget kan pushas direkt in i main utan en pull-request.
+Inuti PDF Folder hittar man kriterier "TaskDescription" samt teststrategi inlämningen "DevOps examination". 
+
+
+
 ## Instruktionsbok för Utvecklare
 
 För att göra det enklare att releasa programmet, här är en lista på värdefulla kommandon och exempel på kod.
