@@ -1,4 +1,10 @@
 # DevOps-ExaminationProject
+
+I detta utbildnings projekt skapar jag en CI/CD pipeline där tester körs enligt "fail-fast".
+Inuti PDF Folder hittar man kriterier "TaskDescription" samt teststrategi inlämningen "DevOps examination". 
+
+
+
 ## Instruktionsbok för Utvecklare
 
 För att göra det enklare att releasa programmet, här är en lista på värdefulla kommandon och exempel på kod.
